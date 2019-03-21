@@ -1,0 +1,16 @@
+{
+    "name": "sharomet/cms",
+    "authors": [
+        {
+            "name": "sharomet",
+            "email": "sharometal@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Engine\\": "engine",
+            "Engine\\DI\\": "engine/DI"
+        }
+    }
+}

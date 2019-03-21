@@ -1,7 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sharomet
- * Date: 28.04.2017
- * Time: 16:53
- */
+
+return [
+    Engine\Services\Database\Provider::class,
+    Engine\Services\Router\Provider::class,
+];

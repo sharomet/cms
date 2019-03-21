@@ -1,23 +1,22 @@
 <?php
-namespace Engine\Services\Database;
+namespace Engine\Services\Router;
 
 use Engine\Services\AbstractProvider;
-use Engine\Core\Database\Connection;
+use Engine\Core\Router\Router;
 
 class Provider extends AbstractProvider
 {
     /**
      * @var string
      */
-    public $servicesName = 'db';
+    public $servicesName = 'router';
 
     /**
      * @return mixed
      */
     public function init()
     {
-        $db = new Connection();
-
-        $this->di->set($this->servicesName, $db);
+        $router = new Router('http://cms/');
+        $this->di->set($this->servicesName, $router);
     }
 }

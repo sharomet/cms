@@ -1,15 +1,25 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sharomet
- * Date: 28.04.2017
- * Time: 16:14
- */
-
 namespace Engine\Services;
 
-
-class AbstractProvider
+abstract class AbstractProvider
 {
+    /**
+     * @var di
+     */
+    protected $di;
+
+    /**
+     * AbstractProvider constructor.
+     * @param \Engine\DI\Di $di
+     */
+    public function __construct(\Engine\DI\Di $di)
+    {
+        $this->di = $di;
+    }
+
+    /**
+     * @return mixed
+     */
+    abstract function init();
 
 }
