@@ -10,6 +10,7 @@ abstract class Controller
      */
     protected $di;
     protected $db;
+    protected $view;
 
     /**
      * Controller constructor.
@@ -18,5 +19,6 @@ abstract class Controller
     public function __construct(DI $di)
     {
         $this->di = $di;
+        $this->view = $this->di->get('view');
     }
 }
