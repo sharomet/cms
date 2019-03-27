@@ -27,7 +27,8 @@ class Cms
         try {
             $this->router->add('home', '/', 'HomeController:index');
             $this->router->add('news', '/news', 'HomeController:news');
-            $this->router->add('user', '/user/12', 'UserController:index');
+            $this->router->add('news_single', '/news/(id:int)', 'HomeController:news');
+
 
             $routeDispatch = $this->router->dispatch(Common::getMethod(), Common::getPathUri());
 
