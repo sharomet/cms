@@ -26,7 +26,7 @@ class Cms
     {
         try {
 
-            require_once __DIR__ . '/../cms/Route.php';
+            require_once __DIR__ . '/../' .mb_strtolower(ENV). '/Route.php';
 
             $routeDispatch = $this->router->dispatch(Common::getMethod(), Common::getPathUri());
 
@@ -36,7 +36,7 @@ class Cms
 
             list($class, $action) = explode(':', $routeDispatch->getController(), 2);
 
-            $controller = '\\Cms\\Controller\\' . $class;
+            $controller = '\\' .ENV. '\\Controller\\' . $class;
             $parameters = $routeDispatch->getParameters();
             call_user_func_array([new $controller($this->di), $action], $parameters);
 
